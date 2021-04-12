@@ -1,0 +1,726 @@
+@import "./base/global.scss";
+@import "./base/variables.scss";
+@import "./base/mixins.scss";
+
+* {
+  box-sizing: border-box;
+  font-family: $font;
+}
+
+p {
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.671);
+  margin: 0.5vw 0vw;
+}
+
+a {
+  color: $linksColor;
+
+  &:hover {
+    text-decoration: none;
+    color: rgb(40, 122, 156);
+  }
+}
+
+.leftDiv {
+  left: 0;
+  display: block;
+  background: $leftDivBg;
+  z-index: 0;
+  border-right: (20.68vw / 11.9) solid $leftDivBg;
+  padding-right: 0;
+
+  @include desktop {
+    box-shadow: (20.68rem / 16) 0 0vw $leftDivBg;
+  }
+}
+
+.personalTop {
+  position: relative;
+  height: (60vw / 2.8);
+  padding: (10vw / 2.8) 2vw (10vw / 2.8) 0;
+
+  @include desktop {
+    height: (120rem / 16);
+    padding: (55.92rem / 16) 2vw (55.92rem / 16) 0;
+  }
+
+  & > div {
+    min-height: (60vw / 2.8);
+
+    @include desktop {
+      min-height: (120rem / 16);
+    }
+
+    & .leftDiv {
+      min-height: (60vw / 2.8);
+      order: 1;
+
+      @include desktop {
+        min-height: (120rem / 16);
+      }
+
+      & h2 {
+        top: (27.5vw / 2.8);
+        position: absolute;
+        left: (45vw / 11.9);
+        font-size: (7.5vw / 2.8);
+        font-weight: 900;
+        color: $h2Color;
+        z-index: 1;
+
+        @include tablet {
+          font-size: (17vw / 7.68);
+        }
+
+        @include desktop {
+          left: (31rem / 16);
+          font-size: (17rem / 16);
+          letter-spacing: (3rem / 16);
+          top: (50rem / 16);
+        }
+      }
+    }
+
+    & .textDiv {
+      padding-left: (23vw / 11.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 3.5vw;
+      order: 2;
+
+      @include tablet {
+        font-size: (17vw / 7.68);
+      }
+      @include desktop {
+        font-size: (15rem / 16);
+        padding-left: (23rem / 16) + (20.68rem / 16);
+      }
+
+      h1 {
+        position: relative;
+        top: 0vh;
+        font-size: (19vw / 2.8);
+        height: (19vw / 2.8);
+        font-weight: 700;
+        text-align: justify;
+        display: inline;
+        background-image: none;
+
+        @include desktop {
+          font-size: (38rem / 16);
+          height: (38rem / 16);
+        }
+      }
+    }
+  }
+}
+
+.personal {
+  background: transparent;
+  border-top: 0.15rem solid rgb(226, 226, 226);
+  border-bottom: 0.15rem solid rgb(226, 226, 226);
+  position: relative;
+  line-height: (37.28vw / 11.9);
+  padding: (0vw / 2.8) 2vw (0vw / 2.8) 0;
+  color: white;
+  height: (100vw / 2.8);
+
+  @include desktop {
+    height: (202rem / 16);
+    padding: (55.92rem / 16) 2vw (55.92rem / 16) 0;
+  }
+
+  & > div {
+    min-height: (100vw / 2.8);
+    max-height: (100vw / 2.8);
+    line-height: (20vw / 2.8);
+    padding: (10vw / 2.8) 2vw (10vw / 2.8) 0;
+
+    @include tablet {
+      max-height: (80vw / 7.68);
+      line-height: (37.28vw / 7.68);
+      padding: (55.92vw / 7.68) 0 (55.92vw / 7.68) 0;
+    }
+
+    @include desktop {
+      min-height: (202rem / 16);
+      max-height: (202rem / 16);
+      line-height: (37.28rem / 16);
+      padding: (55.92rem / 16) 0 (55.92rem / 16) 0;
+    }
+
+    & .leftDiv {
+      min-height: (100vw / 2.8);
+      max-height: (100vw / 2.8);
+      background: transparent;
+      border-right: none;
+      display: flex;
+      box-shadow: none;
+
+      @include desktop {
+        min-height: (202rem / 16);
+      }
+
+      .profileImage {
+        display: flex;
+        margin-right: auto;
+        align-self: center;
+        height: 45%;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        z-index: 51;
+
+        @include tablet {
+          height: 55%;
+        }
+
+        @include desktop {
+          height: (137rem / 16);
+        }
+
+        & > img {
+          border-radius: 50%;
+        }
+      }
+    }
+
+    & .textDiv {
+      padding-left: (23vw / 11.9);
+      font-size: 3.5vw;
+
+      @include tablet {
+        font-size: (17vw / 7.68);
+      }
+      @include desktop {
+        font-size: (15rem / 16);
+        padding-left: (23rem / 16) + (20.68rem / 16);
+      }
+    }
+  }
+}
+
+.experience {
+  position: relative;
+  line-height: (37.28vw / 11.9);
+  height: (230vw / 2.8);
+  padding: (55.92vw / 11.9) 2vw (55.92vw / 11.9) 0;
+
+  @include tablet {
+    height: (370vw / 7.68);
+    padding: (0vw / 7.68) 2vw (0vw / 7.68) 0;
+  }
+
+  @include desktop {
+    height: (228rem / 16);
+    padding: (55.92rem / 16) 2vw (55.92rem / 16) 0;
+  }
+
+  & > div {
+    min-height: (230vw / 2.8);
+    max-height: (230vw / 2.8);
+    line-height: (25vw / 2.8);
+    padding: (28vw / 2.8) 0 (28vw / 2.8) 0;
+
+    @include tablet {
+      min-height: (370vw / 7.68);
+      padding: (0vw / 7.68) 2vw (0vw / 7.68) 0;
+    }
+
+    @include desktop {
+      min-height: (228rem / 16);
+      line-height: (37.28rem / 16);
+      padding: (55.92rem / 16) 0 (55.92rem / 16) 0;
+    }
+
+    & .leftDiv {
+      min-height: (230vw / 2.8);
+      max-height: (230vw / 2.8);
+
+      @include tablet {
+        min-height: (370vw / 7.68);
+      }
+
+      @include desktop {
+        min-height: (228rem / 16);
+      }
+
+      & h2 {
+        top: (33vw / 2.8);
+        position: absolute;
+        left: (45vw / 11.9);
+        font-size: (7.5vw / 2.8);
+        font-weight: 900;
+        color: $h2Color;
+        z-index: 1;
+
+        @include tablet {
+          top: (60vw / 7.68);
+          font-size: (17vw / 7.68);
+        }
+
+        @include desktop {
+          left: (31rem / 16);
+          font-size: (17rem / 16);
+          letter-spacing: (3rem / 16);
+          top: (55rem / 16);
+        }
+      }
+    }
+
+    & .textDiv {
+      padding-left: (23vw / 11.9);
+      font-size: 3.5vw;
+
+      @include tablet {
+        font-size: (17vw / 7.68);
+      }
+
+      @include desktop {
+        font-size: (15rem / 16);
+        padding-left: (23rem / 16) + (20.68rem / 16);
+      }
+
+      & .technologies strong {
+        background: $skillsBackground;
+        border-radius: 1vw;
+        padding: 0vw 1vw;
+        height: 6vw;
+        margin: 0 0.05vw;
+        color: $skillsColor;
+        font-weight: 900;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        @include tablet {
+          height: 5vw;
+          padding: 0vw 0.2vw;
+          margin: 0 0.005vw;
+        }
+
+        @include desktop {
+          border-radius: 0.3vw;
+          padding: 0vw (3rem / 16);
+          height: (30rem / 16);
+          margin: 0 (0.01rem / 16);
+        }
+      }
+    }
+  }
+}
+
+.works {
+  position: relative;
+  line-height: (37.28vw / 11.9);
+  padding: (55.92vw / 11.9) 2vw (55.92vw / 11.9) 0;
+  height: (150vw / 2.8);
+
+  @include tablet {
+    height: (300vw / 7.68);
+  }
+
+  @include desktop {
+    height: (228rem / 16);
+  }
+
+  & > div {
+    min-height: (150vw / 2.8);
+    max-height: (150vw / 2.8);
+    line-height: (25vw / 2.8);
+    padding: (28vw / 2.8) 0 (28vw / 2.8) 0;
+
+    @include tablet {
+      min-height: (300vw / 7.68);
+    }
+
+    @include desktop {
+      min-height: (228rem / 16);
+      line-height: (37.28rem / 16);
+      padding: (55.92rem / 16) 0 (55.92rem / 16) 0;
+    }
+
+    & .leftDiv {
+      min-height: (150vw / 2.8);
+      max-height: (150vw / 2.8);
+
+      @include tablet {
+        min-height: (300vw / 7.68);
+      }
+
+      @include desktop {
+        min-height: (228rem / 16);
+      }
+
+      & h2 {
+        top: (7vw / 2.8);
+        position: absolute;
+        left: (45vw / 11.9);
+        font-size: (7.5vw / 2.8);
+        font-weight: 900;
+        color: $h2Color;
+        z-index: 1;
+
+        @include tablet {
+          top: (30vw / 7.68);
+          font-size: (17vw / 7.68);
+        }
+
+        @include desktop {
+          left: (31rem / 16);
+          font-size: (17rem / 16);
+          letter-spacing: (3rem / 16);
+          top: (55rem / 16);
+        }
+      }
+    }
+
+    & .textDiv {
+      padding-left: (23vw / 11.9);
+      font-size: 3.5vw;
+
+      @include tablet {
+        font-size: (17vw / 7.68);
+      }
+      @include desktop {
+        font-size: (15rem / 16);
+        padding-left: (23rem / 16) + (20.68rem / 16);
+      }
+
+      & .portfolio {
+        border-radius: 0.5vw;
+        padding: 0.5vw 0.5vw;
+        color: $linksColor;
+
+        &:hover {
+          text-decoration: none;
+          color: rgb(40, 122, 156);
+        }
+      }
+    }
+  }
+}
+
+.education {
+  background-color: $backgroundColor;
+  position: relative;
+  padding: (55.92vw / 11.9) 2vw (55.92vw / 11.9) 0;
+  color: white;
+  height: (170vw / 2.8);
+
+  @include tablet {
+    height: (350vw / 7.68);
+  }
+
+  @include desktop {
+    height: (228rem / 16);
+  }
+
+  & > div {
+    min-height: (170vw / 2.8);
+    max-height: (170vw / 2.8);
+    line-height: (25vw / 2.8);
+    padding: (28vw / 2.8) 0 (28vw / 2.8) 0;
+
+    @include tablet {
+      min-height: (350vw / 7.68);
+    }
+
+    @include desktop {
+      min-height: (228rem / 16);
+      line-height: (37.28rem / 16);
+      padding: (55.92rem / 16) 0 (55.92rem / 16) 0;
+    }
+
+    & .leftDiv {
+      min-height: (170vw / 2.8);
+      max-height: (170vw / 2.8);
+
+      @include tablet {
+        min-height: (350vw / 7.68);
+      }
+
+      @include desktop {
+        min-height: (228rem / 16);
+      }
+
+      & h2 {
+        top: (42vw / 2.8);
+        position: absolute;
+        left: (45vw / 11.9);
+        font-size: (7.5vw / 2.8);
+        font-weight: 900;
+        color: $h2Color;
+        z-index: 1;
+
+        @include tablet {
+          top: (55vw / 7.68);
+          font-size: (17vw / 7.68);
+        }
+
+        @include desktop {
+          left: (31rem / 16);
+          font-size: (17rem / 16);
+          letter-spacing: (3rem / 16);
+          top: (55rem / 16);
+        }
+      }
+    }
+
+    & .textDiv {
+      padding-left: (23vw / 11.9);
+      font-size: 3.5vw;
+
+      @include tablet {
+        font-size: (17vw / 7.68);
+      }
+      @include desktop {
+        font-size: (15rem / 16);
+        padding-left: (23rem / 16) + (20.68rem / 16);
+      }
+    }
+  }
+}
+
+.courses {
+  position: relative;
+  padding: (55.92vw / 11.9) 2vw (55.92vw / 11.9) 0;
+  color: white;
+  height: (200vw / 2.8);
+
+  @include tablet {
+    height: (450vw / 7.68);
+  }
+
+  @include desktop {
+    height: (228rem / 16);
+  }
+
+  & > div {
+    min-height: (200vw / 11.9);
+    line-height: (25vw / 2.8);
+    padding: (55.92vw / 11.9) 0 (55.92vw / 11.9) 0;
+
+    @include tablet {
+      min-height: (450vw / 7.68);
+    }
+
+    @include desktop {
+      min-height: (228rem / 16);
+      line-height: (37.28rem / 16);
+    }
+
+    & .leftDiv {
+      min-height: (200vw / 2.8);
+      max-height: (200vw / 2.8);
+
+      @include tablet {
+        min-height: (450vw / 7.68);
+      }
+
+      @include desktop {
+        min-height: (228rem / 16);
+      }
+
+      & h2 {
+        top: (4vw / 2.8);
+        position: absolute;
+        left: (45vw / 11.9);
+        font-size: (7.5vw / 2.8);
+        font-weight: 900;
+        color: $h2Color;
+        z-index: 1;
+
+        @include tablet {
+          top: (55vw / 11.9);
+          font-size: (17vw / 7.68);
+        }
+
+        @include desktop {
+          left: (31rem / 16);
+          top: (55rem / 16);
+          font-size: (17rem / 16);
+          letter-spacing: (3rem / 16);
+        }
+      }
+    }
+
+    & .textDiv {
+      padding-left: (23vw / 11.9);
+      font-size: 3.5vw;
+
+      @include tablet {
+        font-size: (17vw / 7.68);
+      }
+      @include desktop {
+        font-size: (15rem / 16);
+        padding-left: (23rem / 16) + (20.68rem / 16);
+      }
+    }
+  }
+}
+
+.languages {
+  background-color: $backgroundColor;
+  position: relative;
+  line-height: (37.28vw / 11.9);
+  padding: (55.92vw / 11.9) 2vw (55.92vw / 11.9) 0;
+  color: white;
+  height: (140vw / 2.8);
+
+  @include tablet {
+    height: (280vw / 7.68);
+  }
+
+  @include desktop {
+    height: (228rem / 16);
+  }
+
+  & > div {
+    min-height: (140vw / 2.8);
+    max-height: (140vw / 2.8);
+    line-height: (25vw / 2.8);
+    padding: (28vw / 2.8) 0 (28vw / 2.8) 0;
+
+    @include tablet {
+      min-height: (280vw / 7.68);
+    }
+
+    @include desktop {
+      min-height: (228rem / 16);
+      line-height: (37.28rem / 16);
+      padding: (55.92rem / 16) 0 (55.92rem / 16) 0;
+    }
+
+    & .leftDiv {
+      min-height: (140vw / 2.8);
+      max-height: (140vw / 2.8);
+
+      @include tablet {
+        min-height: (280vw / 7.68);
+      }
+
+      @include desktop {
+        min-height: (228rem / 16);
+      }
+
+      & h2 {
+        top: (38vw / 2.8);
+        position: absolute;
+        left: (45vw / 11.9);
+        font-size: (7.5vw / 2.8);
+        font-weight: 900;
+        color: $h2Color;
+        z-index: 1;
+
+        @include tablet {
+          top: (55vw / 7.68);
+          font-size: (17vw / 7.68);
+        }
+
+        @include desktop {
+          left: (31rem / 16);
+          top: (55rem / 16);
+          font-size: (17rem / 16);
+          letter-spacing: (3rem / 16);
+        }
+      }
+    }
+
+    & .textDiv {
+      padding-left: (23vw / 11.9);
+      font-size: 3.5vw;
+
+      @include tablet {
+        font-size: (17vw / 7.68);
+      }
+      @include desktop {
+        font-size: (15rem / 16);
+        padding-left: (23rem / 16) + (20.68rem / 16);
+      }
+    }
+  }
+}
+
+.aboutMe {
+  position: relative;
+  line-height: (37.28vw / 11.9);
+  padding: (55.92vw / 11.9) 2vw (55.92vw / 11.9) 0;
+  border-radius: 0px 0px 0px 7vw;
+  height: (175vw / 2.8);
+
+  @include tablet {
+    height: (400vw / 7.68);
+  }
+
+  @include desktop {
+    height: (228rem / 16);
+  }
+
+  & > div {
+    min-height: (175vw / 2.8);
+    max-height: (175vw / 2.8);
+    line-height: (25vw / 2.8);
+    padding: (28vw / 2.8) 0 (28vw / 2.8) 0;
+
+    @include tablet {
+      min-height: (400vw / 7.68);
+    }
+
+    @include desktop {
+      min-height: (228rem / 16);
+      line-height: (37.28rem / 16);
+      padding: (55.92rem / 16) 0 (55.92rem / 16) 0;
+    }
+
+    & .leftDiv {
+      border-radius: 0px 0px 0px 7vw;
+      min-height: (175vw / 2.8);
+      max-height: (175vw / 2.8);
+
+      @include tablet {
+        min-height: (400vw / 7.68);
+      }
+
+      @include desktop {
+        min-height: (228rem / 16);
+      }
+
+      & h2 {
+        top: (7vw / 2.8);
+        position: absolute;
+        left: (45vw / 11.9);
+        font-size: (7.5vw / 2.8);
+        font-weight: 900;
+        color: $h2Color;
+        z-index: 1;
+
+        @include tablet {
+          top: (45vw / 7.68);
+          font-size: (17vw / 7.68);
+        }
+
+        @include desktop {
+          left: (31rem / 16);
+          top: (55rem / 16);
+          font-size: (17rem / 16);
+          letter-spacing: (1rem / 16);
+        }
+      }
+    }
+
+    & .textDiv {
+      padding-left: (23vw / 11.9);
+      font-size: 3.5vw;
+
+      @include tablet {
+        font-size: (17vw / 7.68);
+      }
+      @include desktop {
+        font-size: (15rem / 16);
+        padding-left: (23rem / 16) + (20.68rem / 16);
+      }
+    }
+  }
+}
